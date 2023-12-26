@@ -4,15 +4,15 @@
     "version": "1.0.2",
     "description": "alexellis/arkade feature",
     "options": {
-        "get_commands": {
+        "greeting": {
             "type": "string",
             "proposals": [
-                "task",
-                "terraform",
-                "flux",
-                "cosign"
+                "hey",
+                "hello",
+                "hi",
+                "howdy"
             ],
-            "default": "",
+            "default": "hey",
             "description": "Select a pre-made greeting, or enter your own"
         }
     },

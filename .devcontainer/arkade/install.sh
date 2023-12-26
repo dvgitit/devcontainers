@@ -3,10 +3,6 @@ set -e
 
 echo "Activating feature 'arkade'"
 
-GET_COMMANDS=${GET_COMMANDS:-undefined}
-echo "The provided greeting is: $GET_COMMANDS"
-
-
 # The 'install.sh' entrypoint script is always executed as the root user.
 #
 # These following environment variables are passed in by the dev container CLI.
@@ -22,8 +18,4 @@ echo "The effective dev container containerUser's home directory is '$_CONTAINER
 # install arkade
 command -v arkade || {
     curl -sLS https://get.arkade.dev | sudo sh;
-    if [ "$GET_COMMANDS" -ne "undefined" ]
-    then
-        arkade get ${GET_COMMANDS};
-    fi
 }

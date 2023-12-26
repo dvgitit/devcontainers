@@ -1,0 +1,15 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  setup_local_test:
+    cmds:
+      - cp -R ./src/arkade ./devcontainer
+
+  cleanup_local_test:
+    cmds:
+      - rm -rf ./devcontainer/arkade
