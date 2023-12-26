@@ -1,15 +1,13 @@
 
 # arkade (arkade)
 
-An arkade feature
+alexellis/arkade feature
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/dvgitit/devcontainers/arkade:1": {
-        "version": "latest"
-    }
+    "ghcr.io/dvgitit/devcontainers/arkade:1": {}
 }
 ```
 
@@ -17,10 +15,10 @@ An arkade feature
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| greeting | Select a pre-made greeting, or enter your own | string | hey |
+| get_commands | Select a pre-made greeting, or enter your own | string | - |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/devcontainers/feature-starter/blob/main/src/hello/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/dvgitit/devcontainers/blob/main/src/arkade/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
