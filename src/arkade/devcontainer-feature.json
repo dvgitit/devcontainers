@@ -1,0 +1,22 @@
+{
+    "name": "arkade",
+    "id": "arkade",
+    "version": "1.0.2",
+    "description": "alexellis/arkade feature",
+    "options": {
+        "greeting": {
+            "type": "string",
+            "proposals": [
+                "hey",
+                "hello",
+                "hi",
+                "howdy"
+            ],
+            "default": "hey",
+            "description": "Select a pre-made greeting, or enter your own"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
