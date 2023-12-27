@@ -4,6 +4,7 @@
   - fork https://github.com/devcontainers/feature-starter
   - start vscode and reopen in devcontainer
   - add .gitattributes
+  - add new feature to .github/workflows/test.yaml
 
 # Dev Container Features: Self Authoring Template
 
