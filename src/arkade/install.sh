@@ -29,7 +29,7 @@ command -v arkade || {
     then
         curl -sLS https://get.arkade.dev | sudo sh;
     else
-        apt-get update && apt-get install -y sudo;
+        curl -sLS https://get.arkade.dev | sh;
     fi
     if [ "$GET_COMMANDS" -ne "undefined" ]
     then
