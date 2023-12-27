@@ -25,11 +25,12 @@ command -v arkade || {
         cat /etc/os-release
         apt-get update && apt-get install -y curl;
     }
-    command -v sudo || {
-        apt-get update && apt-get install -y sudo;
-    } else {
+    if command -v sudo
+    then
         curl -sLS https://get.arkade.dev | sudo sh;
-    }
+    else
+        apt-get update && apt-get install -y sudo;
+    fi
     if [ "$GET_COMMANDS" -ne "undefined" ]
     then
         arkade get ${GET_COMMANDS};
