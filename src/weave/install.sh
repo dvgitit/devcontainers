@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-echo "Activating feature 'arkade'"
+echo "Activating feature 'weave'"
 
 GET_COMMANDS=${GET_COMMANDS:-undefined}
 echo "The provided greeting is: $GET_COMMANDS"
@@ -22,20 +22,14 @@ echo "The effective dev container remoteUser's home directory is '$_REMOTE_USER_
 echo "The effective dev container containerUser is '$_CONTAINER_USER'"
 echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
 
-# install arkade
-command -v arkade || {
-    command -v curl || {
-        cat /etc/os-release
-        apt-get update && apt-get install -y curl;
-    }
-    if false # command -v sudo
-    then
-        curl -sLS https://get.arkade.dev | sudo sh;
-    else
-        curl -sLS https://get.arkade.dev | sh;
-    fi
-    if [ "$GET_COMMANDS" -ne "undefined" ]
-    then
-        arkade get ${GET_COMMANDS};
-    fi
+command -v curl || {
+    cat /etc/os-release
+    apt-get update && apt-get install -y curl;
 }
+
+# install weave
+curl --silent --location "https://github.com/weaveworks/weave-gitops/releases/latest/download/gitops-$(uname)-$(uname -m).tar.gz" | tar xz -C /tmp
+[ ! -d "$HOME/.local/bin" ] && { mkdir -p $HOME/.local/bin; }
+mv /tmp/gitops $HOME/.local/bin
+[ ! -d "$HOME/.config" ] && { mkdir -p $HOME/.config; }
+$HOME/.local/bin/gitops set config analytics false

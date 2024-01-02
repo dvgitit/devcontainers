@@ -13,3 +13,16 @@ tasks:
   cleanup_local_test:
     cmds:
       - rm -rf ./devcontainer/arkade
+
+  test:
+    cmds:
+      - devcontainer features test
+
+  output:
+    cmds:
+      - mkdir -p .me/output
+
+  package:
+    depds: [output]
+    cmds:
+      - devcontainer features package -o .k1/output src

@@ -1,0 +1,22 @@
+{
+    "name": "weave",
+    "id": "weave",
+    "version": "1.0.2",
+    "description": "weave-ui",
+    "options": {
+        "get_commands": {
+            "type": "string",
+            "proposals": [
+                "task",
+                "terraform",
+                "flux",
+                "cosign"
+            ],
+            "default": "",
+            "description": "Select a pre-made greeting, or enter your own"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

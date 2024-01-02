@@ -18,9 +18,22 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
         //"./arkade": {}
     },
+    "build": {
+        "HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+        "HTTPS_PROXY": "${localEnv:HTTP_PROXY}",
+        "http_proxy": "${localEnv:HTTP_PROXY}",
+        "https_proxy": "${localEnv:HTTP_PROXY}"
+    },
+    "containerEnv": {
+        "HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+        "HTTPS_PROXY": "${localEnv:HTTP_PROXY}",
+        "http_proxy": "${localEnv:HTTP_PROXY}",
+        "https_proxy": "${localEnv:HTTP_PROXY}"
+      },
     "remoteUser": "node",
-    "updateContentCommand": "npm install -g @devcontainers/cli"
+    "updateContentCommand": "npm install -g @devcontainers/cli",
+    "postCreateCommand": "bash .devcontainer/scripts/addProxies.sh"
 }
