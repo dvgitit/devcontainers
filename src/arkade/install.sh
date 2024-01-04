@@ -34,6 +34,8 @@ command -v arkade || {
     else
         curl -sLS https://get.arkade.dev | sh;
     fi
+    [ ! -d "$HOME/.local/bin" ] && { mkdir -p "$HOME/.local/bin"; }
+    mv arkade $HOME/.local/bin
     if [ "$GET_COMMANDS" -ne "undefined" ]
     then
         arkade get ${GET_COMMANDS};
